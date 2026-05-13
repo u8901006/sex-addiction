@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>性成癎研究文獻日報 · 2026-05-13</title>
+<style>
+:root{--bg:#f6f1e8;--surface:#fffaf2;--line:#d8c5ab;--text:#2b2118;--muted:#766453;--accent:#8c4f2b;--accent-soft:#ead2bf;--card-bg:color-mix(in srgb,var(--surface) 92%,white)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top,#fff6ea 0,var(--bg) 55%,#ead8c6 100%);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;min-height:100vh;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.header{text-align:center;padding:48px 0 32px;animation:fadeDown .6s ease}
+.logo{font-size:56px;margin-bottom:12px}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--accent);font-size:14px;margin-bottom:20px;font-weight:500}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.badge.date-badge{background:var(--accent-soft);color:var(--accent)}
+.badge.count-badge{background:#e2ddd4;color:var(--muted)}
+.card{background:var(--card-bg);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:20px;animation:fadeUp .6s ease both}
+.card h2{font-size:20px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.summary-text{font-size:15px;line-height:1.9;color:var(--text)}
+.section-title{font-size:22px;font-weight:700;margin:36px 0 20px;padding-left:4px;display:flex;align-items:center;gap:10px}
+.pick-card{background:var(--card-bg);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:18px;animation:fadeUp .5s ease both}
+.pick-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.rank{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+.pick-title{font-size:17px;font-weight:600;flex:1;min-width:0}
+.pick-journal{font-size:13px;color:var(--muted)}
+.util-badge{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
+.pico-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:14px 0}
+.pico-item{font-size:13px;line-height:1.5}
+.pico-label{color:var(--accent);font-weight:700;margin-right:4px}
+.pick-summary{font-size:14px;line-height:1.8;margin:12px 0;color:var(--text)}
+.pick-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{padding:3px 10px;border-radius:10px;font-size:11px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.paper-card{background:var(--card-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .5s ease both}
+.paper-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.paper-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.paper-summary{font-size:13px;line-height:1.7;color:var(--text)}
+.topic-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:14px}
+.topic-label{width:120px;text-align:right;flex-shrink:0;color:var(--text);font-weight:500}
+.topic-bar-wrap{flex:1;height:22px;background:var(--accent-soft);border-radius:6px;overflow:hidden}
+.topic-bar{height:100%;background:var(--accent);border-radius:6px;transition:width .5s ease;min-width:2px}
+.topic-count{font-size:12px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.kw{padding:5px 14px;background:var(--accent-soft);color:var(--accent);border-radius:14px;font-size:13px;font-weight:500}
+.clinic-banner{margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:center;font-size:14px;line-height:2.2}
+.clinic-banner a{color:var(--accent);text-decoration:none;font-weight:600}
+.clinic-banner a:hover{text-decoration:underline}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:40px;line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:15px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+  .wrap{padding:16px 12px 40px}
+  .pico-grid{grid-template-columns:1fr}
+  .topic-label{width:80px;font-size:12px}
+  .pick-card,.card{padding:18px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+  <div class="logo">🔬</div>
+  <h1>Sex Addiction Research</h1>
+  <p class="subtitle">性成癎研究文獻日報</p>
+  <div class="badges">
+    <span class="badge date-badge">📅 2026年5月13日（週三）</span>
+    <span class="badge count-badge">📄 5 篇文獻</span>
+  </div>
+</header>
+<section class="card"><h2>📊 今日文獻趨勢</h2><p class="summary-text">今日文獻聚焦於強迫性行為與問題性色情使用(PPU)的多維度研究。在評估工具上，新開發的SSCI-CSB半結構式訪談提供了標準化的臨床診斷依據。共病機制方面，研究揭示PPU與酒精使用問題共病會加劇創傷與憂鬱症狀。此外，文獻重新審視宗教道德在PPU中的保護角色，並探討性少數群體的GHB過量風險及特殊族群的犯案恐懼與應對策略，展現了從臨床評估到社會文化的廣泛視角。</p></section><h2 class="section-title">⭐ 本日精選</h2><div class="pick-card" style="animation-delay:0s">
+  <div class="pick-header">
+    <span class="rank">1</span>
+    <span class="pick-title">The Semi-Structured Clinical Interview for the Assessment of Compulsive Sexual Behavior (SSCI-CSB): Development, Reliability, and Validity.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of clinical psychology</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41711134/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>CSB臨床評估對象</div>
+    <div class="pico-item"><span class="pico-label">I</span>SSCI-CSB臨床訪談</div>
+    <div class="pico-item"><span class="pico-label">C</span>現有評估工具</div>
+    <div class="pico-item"><span class="pico-label">O</span>診斷信度與效度</div>
+  </div>
+  <p class="pick-summary">介紹針對強迫性行為障礙(CSB)新開發的半結構式臨床訪談工具(SSCI-CSB)。本研究驗證了該工具的信度與效度，為臨床醫師提供標準化診斷依據，有助於提升CSBD在臨床實務中的鑑別診斷準確性，是推動CSBD評估標準化的重要里程碑。</p>
+  <div class="pick-tags"><span class="tag">CSBD診斷分類</span><span class="tag">量表評估</span><span class="tag">鑑別診斷</span></div>
+</div><div class="pick-card" style="animation-delay:0.08s">
+  <div class="pick-header">
+    <span class="rank">2</span>
+    <span class="pick-title">Transdiagnostic psychopathology among individuals with co-occurring problematic pornography use and alcohol use problems.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of affective disorders</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41713609/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>PPU與酒精問題成人</div>
+    <div class="pico-item"><span class="pico-label">I</span>PPU合併酒精問題</div>
+    <div class="pico-item"><span class="pico-label">C</span>單一問題患者</div>
+    <div class="pico-item"><span class="pico-label">O</span>跨診斷精神病理特徵</div>
+  </div>
+  <p class="pick-summary">探討PPU與酒精使用問題共病之跨診斷精神病理學。結果顯示，共病患者在創傷後壓力、憂鬱及負向情感上顯著高於單純酒精問題者；且酒精問題者若伴隨PPU，其心理困擾會加劇。臨床應重視此共病群體的情緒評估，以提供適切之整合性治療。</p>
+  <div class="pick-tags"><span class="tag">PPU色情內容</span><span class="tag">物質使用</span><span class="tag">精神共病</span><span class="tag">創傷依附</span></div>
+</div><div class="pick-card" style="animation-delay:0.16s">
+  <div class="pick-header">
+    <span class="rank">3</span>
+    <span class="pick-title">Religion, morals, and pornography: risk or resource? A U.S. census-matched study.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Addictive behaviors</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41895073/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>美國成年人口</div>
+    <div class="pico-item"><span class="pico-label">I</span>宗教認同與道德反對</div>
+    <div class="pico-item"><span class="pico-label">C</span>無宗教或無道德反對者</div>
+    <div class="pico-item"><span class="pico-label">O</span>PPU與生活滿意度</div>
+  </div>
+  <p class="pick-summary">本研究納入色情內容戒斷者，發現宗教認同與道德反對與PPU無直接關聯，但與更高的性、浪漫及整體生活滿意度相關，且能降低自殺風險。結果顛覆過去認為宗教與道德是PPU風險因子的觀點，顯示其可能作為心理健康的保護資源。</p>
+  <div class="pick-tags"><span class="tag">PPU色情內容</span><span class="tag">道德不一致</span><span class="tag">社會文化批判</span></div>
+</div><div class="pick-card" style="animation-delay:0.24s">
+  <div class="pick-header">
+    <span class="rank">4</span>
+    <span class="pick-title">The Role of Coping Strategies, Impulsivity and Hypersexuality on the Fear of Offending Among Minor Attracted Persons (MAPs).</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Sexual abuse : a journal of research and treatment</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41499652/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>兒童性吸引者</div>
+    <div class="pico-item"><span class="pico-label">I</span>應對策略與衝動性</div>
+    <div class="pico-item"><span class="pico-label">C</span>不同性幻想強度分組</div>
+    <div class="pico-item"><span class="pico-label">O</span>犯案恐懼感</div>
+  </div>
+  <p class="pick-summary">探究兒童性吸引者(MAPs)的應對策略、衝動性與性慾亢進對犯案恐懼的影響。發現物質使用、不當自慰等負向應對策略與衝動性會加劇恐懼；高性幻想強度者最易採用不當應對。結果有助於制定預防性侵害的精準心理治療策略。</p>
+  <div class="pick-tags"><span class="tag">衝動強迫機制</span><span class="tag">心理治療</span><span class="tag">精神共病</span></div>
+</div><div class="pick-card" style="animation-delay:0.32s">
+  <div class="pick-header">
+    <span class="rank">5</span>
+    <span class="pick-title">Non-fatal GHB overdose among sexual and gender minorities: A syndemic perspective.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Drug and alcohol dependence</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42013580/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:var(--muted)">臨床價值：低</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>性與性別少數群體</div>
+    <div class="pico-item"><span class="pico-label">I</span>GHB使用與過量</div>
+    <div class="pico-item"><span class="pico-label">C</span>未過量者</div>
+    <div class="pico-item"><span class="pico-label">O</span>共病症狀與健康影響</div>
+  </div>
+  <p class="pick-summary">探討性與性別少數群體中發生非致命性GHB過量的現象，採用共病視角深入分析其風險因子與健康影響。研究強調物質使用與少數群體壓力的複雜交織關係，為理解該族群高風險行為提供理論基礎，並指出未來臨床介入需考量多重社會壓力源。</p>
+  <div class="pick-tags"><span class="tag">物質使用</span><span class="tag">性別文化</span><span class="tag">精神共病</span></div>
+</div><section class="card"><h2>📈 主題分佈</h2><div class="topic-row">
+  <span class="topic-label">精神共病</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">3</span>
+</div><div class="topic-row">
+  <span class="topic-label">PPU色情內容</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">物質使用</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:67%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">CSBD診斷分類</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">量表評估</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">鑑別診斷</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">道德不一致</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">社會文化批判</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">創傷依附</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">衝動強迫機制</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">心理治療</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">性別文化</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:33%"></div></div>
+  <span class="topic-count">1</span>
+</div></section><section class="card"><h2>🏷️ 關鍵字</h2><div class="kw-wrap"><span class="kw">問題性色情使用</span><span class="kw">強迫性行為障礙</span><span class="kw">物質使用</span><span class="kw">共病</span><span class="kw">精神病理學</span><span class="kw">半結構式訪談</span><span class="kw">臨床評估</span><span class="kw">宗教</span><span class="kw">道德反對</span><span class="kw">應對策略</span><span class="kw">衝動性</span><span class="kw">性少數</span><span class="kw">GHB過量</span><span class="kw">創傷後壓力</span><span class="kw">憂鬱</span><span class="kw">生活滿意度</span><span class="kw">犯案恐懼</span><span class="kw">性慾亢進</span></div></section>
+<div class="clinic-banner">
+  <p>🏠 <a href="https://www.leepsyclinic.com/">李政洋身心診所首頁</a></p>
+  <p>📨 <a href="https://blog.leepsyclinic.com/">訂閱電子報</a></p>
+  <p>☕ <a href="https://buymeacoffee.com/CYlee">Buy me a coffee</a></p>
+</div>
+<footer>
+  <p>Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+  <p style="margin-top:4px">數據來源：PubMed E-Utilities · AI 分析：GLM-5-Turbo</p>
+</footer>
+</div>
+</body>
+</html>
