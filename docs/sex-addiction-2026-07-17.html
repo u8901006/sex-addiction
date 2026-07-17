@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>性成癎研究文獻日報 · 2026-07-17</title>
+<style>
+:root{--bg:#f6f1e8;--surface:#fffaf2;--line:#d8c5ab;--text:#2b2118;--muted:#766453;--accent:#8c4f2b;--accent-soft:#ead2bf;--card-bg:color-mix(in srgb,var(--surface) 92%,white)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top,#fff6ea 0,var(--bg) 55%,#ead8c6 100%);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;min-height:100vh;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.header{text-align:center;padding:48px 0 32px;animation:fadeDown .6s ease}
+.logo{font-size:56px;margin-bottom:12px}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--accent);font-size:14px;margin-bottom:20px;font-weight:500}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.badge.date-badge{background:var(--accent-soft);color:var(--accent)}
+.badge.count-badge{background:#e2ddd4;color:var(--muted)}
+.card{background:var(--card-bg);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:20px;animation:fadeUp .6s ease both}
+.card h2{font-size:20px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.summary-text{font-size:15px;line-height:1.9;color:var(--text)}
+.section-title{font-size:22px;font-weight:700;margin:36px 0 20px;padding-left:4px;display:flex;align-items:center;gap:10px}
+.pick-card{background:var(--card-bg);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:18px;animation:fadeUp .5s ease both}
+.pick-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.rank{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+.pick-title{font-size:17px;font-weight:600;flex:1;min-width:0}
+.pick-journal{font-size:13px;color:var(--muted)}
+.util-badge{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
+.pico-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:14px 0}
+.pico-item{font-size:13px;line-height:1.5}
+.pico-label{color:var(--accent);font-weight:700;margin-right:4px}
+.pick-summary{font-size:14px;line-height:1.8;margin:12px 0;color:var(--text)}
+.pick-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{padding:3px 10px;border-radius:10px;font-size:11px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.paper-card{background:var(--card-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .5s ease both}
+.paper-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.paper-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.paper-summary{font-size:13px;line-height:1.7;color:var(--text)}
+.topic-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:14px}
+.topic-label{width:120px;text-align:right;flex-shrink:0;color:var(--text);font-weight:500}
+.topic-bar-wrap{flex:1;height:22px;background:var(--accent-soft);border-radius:6px;overflow:hidden}
+.topic-bar{height:100%;background:var(--accent);border-radius:6px;transition:width .5s ease;min-width:2px}
+.topic-count{font-size:12px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.kw{padding:5px 14px;background:var(--accent-soft);color:var(--accent);border-radius:14px;font-size:13px;font-weight:500}
+.clinic-banner{margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:center;font-size:14px;line-height:2.2}
+.clinic-banner a{color:var(--accent);text-decoration:none;font-weight:600}
+.clinic-banner a:hover{text-decoration:underline}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:40px;line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:15px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+  .wrap{padding:16px 12px 40px}
+  .pico-grid{grid-template-columns:1fr}
+  .topic-label{width:80px;font-size:12px}
+  .pick-card,.card{padding:18px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+  <div class="logo">🔬</div>
+  <h1>Sex Addiction Research</h1>
+  <p class="subtitle">性成癎研究文獻日報</p>
+  <div class="badges">
+    <span class="badge date-badge">📅 2026年7月17日（週五）</span>
+    <span class="badge count-badge">📄 5 篇文獻</span>
+  </div>
+</header>
+<section class="card"><h2>📊 今日文獻趨勢</h2><p class="summary-text">今日文獻聚焦於強迫性行為障礙（CSBD）的多維度探討。最重要的一篇為期三年的縱向研究挑戰了CSBD作為穩定特質的觀點，指出其更傾向於「狀態」特徵，對鑑別診斷具高度臨床意義。藥物治療方面，有案例報告支持長效型納曲酮作為輔助治療。此外，跨國研究驗證了色情使用的道德不一致模型在不同文化中的適用性。行為成癮與影像增強藥物的共病，以及性衝動的性別差異，則分別從物質濫用與跨文化視角補充了CSBD的複雜全貌。</p></section><h2 class="section-title">⭐ 本日精選</h2><div class="pick-card" style="animation-delay:0s">
+  <div class="pick-header">
+    <span class="rank">1</span>
+    <span class="pick-title">Compulsive sexual behavior may be more state-like than trait-like: Findings from a three-year longitudinal representative survey.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of behavioral addictions</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/41984541/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>代表性社區樣本</div>
+    <div class="pico-item"><span class="pico-label">I</span>三年縱向追蹤評估</div>
+    <div class="pico-item"><span class="pico-label">C</span>基線與各追蹤點之比較</div>
+    <div class="pico-item"><span class="pico-label">O</span>CSBD傾向呈現狀態而非特質波動</div>
+  </div>
+  <p class="pick-summary">該三年縱向研究挑戰了將CSBD視為穩定人格特質的觀點。結果顯示，強迫性行為症狀隨時間波動較大，更符合「狀態」特徵。此發現對臨床鑑別診斷、治療評估及預後判斷具有重要意義，暗示治療應更關注當前誘發因素而非穩定特質。</p>
+  <div class="pick-tags"><span class="tag">CSBD診斷分類</span><span class="tag">流行病學</span><span class="tag">鑑別診斷</span></div>
+</div><div class="pick-card" style="animation-delay:0.08s">
+  <div class="pick-header">
+    <span class="rank">2</span>
+    <span class="pick-title">A global investigation of the Moral Incongruence Model of Pornography Use across genders, religions, and cultures.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of behavioral addictions</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42013354/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>跨國、多宗教與文化背景成人</div>
+    <div class="pico-item"><span class="pico-label">I</span>色情內容使用與道德不一致測量</div>
+    <div class="pico-item"><span class="pico-label">C</span>不同性別、宗教與文化間比較</div>
+    <div class="pico-item"><span class="pico-label">O</span>道德不一致模型具跨文化普適性</div>
+  </div>
+  <p class="pick-summary">本研究透過大規模跨國調查，驗證色情內容使用的道德不一致模型。發現無論性別、宗教信仰或文化背景，自我感知的色情使用與個人道德標準間的不一致，均能顯著預測心理困擾，有助於臨床鑑別真性成癮與道德衝突反應。</p>
+  <div class="pick-tags"><span class="tag">道德不一致</span><span class="tag">PPU色情內容</span><span class="tag">社會文化批判</span><span class="tag">性別文化</span></div>
+</div><div class="pick-card" style="animation-delay:0.16s">
+  <div class="pick-header">
+    <span class="rank">3</span>
+    <span class="pick-title">Extended-release naltrexone (Vivitrol) augmentation for compulsive sexual behavior disorder: a case report.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Irish journal of psychological medicine</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42460460/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>CSBD合併其他精神科診斷患者</div>
+    <div class="pico-item"><span class="pico-label">I</span>添加長效型納曲酮治療</div>
+    <div class="pico-item"><span class="pico-label">C</span>添加前後之症狀比較</div>
+    <div class="pico-item"><span class="pico-label">O</span>顯著降低強迫性性行為衝動</div>
+  </div>
+  <p class="pick-summary">本案例報告描述一名CSBD患者在既有治療基礎上，添加長效型納曲酮後，強迫性性行為衝動與執行顯著減少。此支持鴉片類受體拮抗劑在CSBD藥物治療中的潛力，特別適用於對常規心理治療反應不佳之個案，惟需更多隨機對照試驗驗證。</p>
+  <div class="pick-tags"><span class="tag">藥物治療</span><span class="tag">CSBD診斷分類</span></div>
+</div><div class="pick-card" style="animation-delay:0.24s">
+  <div class="pick-header">
+    <span class="rank">4</span>
+    <span class="pick-title">Gender-specific associations between sexual compulsivity, sexual functioning and sexual satisfaction: a mediation analysis in an Iranian community sample.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Sexual health</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42458736/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:var(--muted)">臨床價值：低</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>伊朗社區成年男女樣本</div>
+    <div class="pico-item"><span class="pico-label">I</span>性衝動、性功能與性滿意度測量</div>
+    <div class="pico-item"><span class="pico-label">C</span>男女間路徑模型差異比較</div>
+    <div class="pico-item"><span class="pico-label">O</span>性功能在性衝動與滿意度間具性別差異中介效應</div>
+  </div>
+  <p class="pick-summary">該研究以伊朗社區樣本探討性衝動、性功能及滿意度之關聯。中介分析顯示，性功能在性衝動與性滿意度間的中介效應存在顯著性別差異，突顯在評估與治療CSBD時，必須納入性別文化與伴侶關係視角，不可一概而論。</p>
+  <div class="pick-tags"><span class="tag">性別文化</span><span class="tag">伴侶關係</span><span class="tag">量表評估</span></div>
+</div><div class="pick-card" style="animation-delay:0.32s">
+  <div class="pick-header">
+    <span class="rank">5</span>
+    <span class="pick-title">The use of Image and Performance-Enhancing Drugs (IPED) in behavioural addictions.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of behavioral addictions</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42461702/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:var(--muted)">臨床價值：低</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>行為成癮族群</div>
+    <div class="pico-item"><span class="pico-label">I</span>影像與表現增強藥物使用評估</div>
+    <div class="pico-item"><span class="pico-label">C</span>與一般族群或非成癮者比較</div>
+    <div class="pico-item"><span class="pico-label">O</span>行為成癮與IPED使用呈正相關</div>
+  </div>
+  <p class="pick-summary">本文探討行為成癮（含CSBD）族群中影像與表現增強藥物的使用情形。研究指出行為成癮者合併IPED使用的比例偏高，反映此族群潛在的物質使用共病風險與身體意象困擾，臨床評估時應常規篩檢此類物質濫用問題。</p>
+  <div class="pick-tags"><span class="tag">物質使用</span><span class="tag">精神共病</span></div>
+</div><section class="card"><h2>📈 主題分佈</h2><div class="topic-row">
+  <span class="topic-label">CSBD診斷分類</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">性別文化</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">道德不一致</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">藥物治療</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">物質使用</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">流行病學</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">社會文化批判</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">伴侶關係</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">量表評估</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">鑑別診斷</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div></section><section class="card"><h2>🏷️ 關鍵字</h2><div class="kw-wrap"><span class="kw">強迫性行為障礙</span><span class="kw">CSBD</span><span class="kw">道德不一致</span><span class="kw">色情內容</span><span class="kw">長效型納曲酮</span><span class="kw">縱向研究</span><span class="kw">狀態特質</span><span class="kw">行為成癮</span><span class="kw">IPED</span><span class="kw">性別差異</span><span class="kw">跨文化</span><span class="kw">伴侶關係</span><span class="kw">物質共病</span><span class="kw">性衝動</span><span class="kw">鑑別診斷</span></div></section>
+<div class="clinic-banner">
+  <p>🏠 <a href="https://www.leepsyclinic.com/">李政洋身心診所首頁</a></p>
+  <p>📨 <a href="https://blog.leepsyclinic.com/">訂閱電子報</a></p>
+  <p>☕ <a href="https://buymeacoffee.com/CYlee">Buy me a coffee</a></p>
+</div>
+<footer>
+  <p>Powered by PubMed + Zhipu AI · <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+  <p style="margin-top:4px">數據來源：PubMed E-Utilities · AI 分析：GLM-5-Turbo</p>
+</footer>
+</div>
+</body>
+</html>
