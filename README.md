@@ -5,7 +5,7 @@ Automated daily literature report for sex addiction, compulsive sexual behavior 
 ## Features
 
 - Daily automated PubMed search for CSBD-related literature
-- AI-powered analysis using Zhipu GLM-5-Turbo
+- AI-powered analysis using NVIDIA Nemotron (nvidia/nemotron-3-super-120b-a12b)
 - Beautiful HTML reports deployed to GitHub Pages
 - Incremental deduplication (only new papers are summarized)
 - Topic classification and PICO analysis
@@ -16,7 +16,7 @@ Automated daily literature report for sex addiction, compulsive sexual behavior 
 
 ## Setup
 
-1. Set `ZHIPU_API_KEY` in repository secrets
+1. Set `NVIDIA_API_KEY` in repository secrets
 2. Enable GitHub Pages (serve from `docs/` folder on `main` branch)
 3. The workflow runs daily at 09:40 GMT+8
 
@@ -24,5 +24,5 @@ Automated daily literature report for sex addiction, compulsive sexual behavior 
 
 - Node.js 24
 - PubMed E-Utilities API
-- Zhipu AI (GLM-5-Turbo / GLM-4.7 / GLM-4.7-Flash)
+- NVIDIA Nemotron (nvidia/nemotron-3-super-120b-a12b / nvidia/nemotron-3-nano-30b-a3b)
 - GitHub Actions + GitHub Pages

@@ -61,7 +61,7 @@ ${items}
     <p>\u2615 <a href="https://buymeacoffee.com/CYlee">Buy me a coffee</a></p>
   </div>
   <footer>
-    <p>Powered by PubMed + Zhipu AI \xB7 <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+    <p>Powered by PubMed + NVIDIA Nemotron \xB7 <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
   </footer>
 </div>
 </body>

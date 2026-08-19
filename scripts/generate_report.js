@@ -3,9 +3,9 @@
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 
-const API_BASE = 'https://open.bigmodel.cn/api/coding/paas/v4';
-const MODELS = ['GLM-5-Turbo', 'GLM-4.7', 'GLM-4.7-Flash'];
-const MAX_TOKENS = 50000;
+const API_BASE = (process.env.NVIDIA_API_BASE || 'https://integrate.api.nvidia.com/v1').replace(/\/+$/, '');
+const MODEL_CHAIN = ['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-nano-30b-a3b'];
+const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 480000;
 const MAX_RETRIES = 3;
 
@@ -41,52 +41,54 @@ function extractJSON(text) {
   return null;
 }
 
-async function callAI(apiKey, model, systemPrompt, userPrompt) {
-  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-    try {
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
-      const resp = await fetch(`${API_BASE}/chat/completions`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
-        },
-        body: JSON.stringify({
-          model,
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: userPrompt },
-          ],
-          temperature: 0.3,
-          top_p: 0.9,
-          max_tokens: MAX_TOKENS,
-        }),
-        signal: controller.signal,
-      });
-      clearTimeout(timer);
+function delay(ms) {
+  return new Promise(r => setTimeout(r, ms));
+}
 
-      if (resp.status === 429) {
-        const wait = Math.min(2000 * attempt, 10000);
-        console.log(`[WARN] Rate limited on ${model}, retry ${attempt}/${MAX_RETRIES} in ${wait}ms`);
-        await new Promise(r => setTimeout(r, wait));
-        continue;
-      }
-      if (!resp.ok) {
-        const body = await resp.text().catch(() => '');
-        throw new Error(`${model} API ${resp.status}: ${body.slice(0, 200)}`);
-      }
-      const data = await resp.json();
-      const content = data?.choices?.[0]?.message?.content;
-      if (!content) throw new Error(`${model} returned empty content`);
-      return content;
-    } catch (err) {
-      if (err.name === 'AbortError') throw new Error(`${model} timed out after ${TIMEOUT_MS}ms`);
-      if (attempt === MAX_RETRIES) throw err;
-      console.log(`[WARN] ${model} attempt ${attempt} failed: ${err.message}`);
-      await new Promise(r => setTimeout(r, 1000 * attempt));
-    }
+function backoffMs(attempt) {
+  return Math.min(15 * attempt, 60) * 1000;
+}
+
+async function callModelAPI(apiKey, model, payload) {
+  const resp = await fetch(`${API_BASE}/chat/completions`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(payload),
+    signal: AbortSignal.timeout(TIMEOUT_MS),
+  });
+
+  const bodyText = await resp.text().catch(() => '');
+
+  if (resp.status === 429) {
+    const retryAfter = parseInt(resp.headers.get('retry-after') || '', 10);
+    throw new Error(`RATE_LIMIT:${Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter : 60}`);
   }
+
+  if (resp.status === 401 || resp.status === 403) {
+    throw new Error(`AUTH_FAILED:${resp.status}:${bodyText.slice(0, 200)}`);
+  }
+
+  if (!resp.ok) {
+    throw new Error(`HTTP_${resp.status}:${bodyText.slice(0, 200)}`);
+  }
+
+  let data;
+  try {
+    data = JSON.parse(bodyText);
+  } catch {
+    throw new Error('INVALID_JSON_RESPONSE');
+  }
+  return data?.choices?.[0]?.message?.content?.trim() || '';
+}
+
+function isNetworkError(e) {
+  return e.name === 'TimeoutError'
+    || e.name === 'AbortError'
+    || e.name === 'TypeError'
+    || /ETIMEDOUT|ENOTFOUND|ECONNRESET|ECONNREFUSED|fetch failed|network/i.test(e.message);
 }
 
 async function analyzeWithAI(apiKey, papersData) {
@@ -151,45 +153,72 @@ ${paperList}
 
 \u8ACB\u5206\u6790\u4EE5\u4E0A\u6587\u737B\uFF0C\u4F9D\u6307\u5B9A JSON \u683C\u5F0F\u56DE\u61C9\u3002`;
 
-  let lastErr;
-  for (const model of MODELS) {
-    try {
-      console.log(`[INFO] Trying ${model}...`);
-      const raw = await callAI(apiKey, model, systemPrompt, userPrompt);
-      const parsed = extractJSON(raw);
-      if (parsed && (parsed.top_picks || parsed.other_papers)) {
-        console.log(`[INFO] ${model} succeeded`);
-        return parsed;
+  for (const model of MODEL_CHAIN) {
+    for (let attempt = 0; attempt < MAX_RETRIES; attempt++) {
+      try {
+        console.log(`[INFO] Trying ${model} (attempt ${attempt + 1}/${MAX_RETRIES})...`);
+
+        const payload = {
+          model,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+          ],
+          temperature: 1.0,
+          top_p: 0.95,
+          max_tokens: MAX_TOKENS,
+          chat_template_kwargs: { enable_thinking: false },
+        };
+
+        const raw = await callModelAPI(apiKey, model, payload);
+        if (!raw) {
+          console.log(`[WARN] Empty response from ${model} (attempt ${attempt + 1}), retrying...`);
+          await delay(backoffMs(attempt + 1));
+          continue;
+        }
+
+        const parsed = extractJSON(raw);
+        if (!(parsed && (parsed.top_picks || parsed.other_papers))) {
+          console.log(`[WARN] JSON parse failed on attempt ${attempt + 1}/${MAX_RETRIES}, retrying...`);
+          await delay(backoffMs(attempt + 1));
+          continue;
+        }
+
+        console.log(`[INFO] Analysis complete via ${model}: ${parsed.top_picks?.length || 0} top picks, ${parsed.other_papers?.length || 0} total`);
+        return { ...parsed, _model: model };
+      } catch (err) {
+        if (err.message.startsWith('RATE_LIMIT:')) {
+          const base = parseInt(err.message.split(':')[1], 10);
+          const wait = Math.min(base * (attempt + 1), 180);
+          console.log(`[WARN] Rate limited (429), waiting ${wait}s...`);
+          await delay(wait * 1000);
+          continue;
+        }
+        if (err.message.startsWith('AUTH_FAILED:')) {
+          console.error(`[ERROR] Authentication failed: ${err.message}. Check that the NVIDIA_API_KEY repository secret is valid.`);
+          return null;
+        }
+        if (err.message.startsWith('HTTP_4')) {
+          console.error(`[ERROR] ${model}: ${err.message}`);
+          break;
+        }
+        if (isNetworkError(err)) {
+          console.log(`[WARN] Network/timeout error on attempt ${attempt + 1}: ${err.message}`);
+        } else {
+          console.log(`[WARN] ${model} failed on attempt ${attempt + 1}: ${err.message}`);
+        }
+        await delay(backoffMs(attempt + 1));
       }
-      console.log(`[WARN] ${model} returned unparseable JSON, trying next model`);
-    } catch (err) {
-      lastErr = err;
-      console.log(`[WARN] ${model} failed: ${err.message}`);
     }
   }
-  if (papersData.papers.length === 0) return null;
-  console.log('[WARN] All models failed, generating fallback');
-  return buildFallback(papersData.papers);
-}
 
-function buildFallback(papers) {
-  return {
-    summary: `\u4ECA\u65E5\u5171\u6709 ${papers.length} \u7BC7\u6027\u6210\u764E\u76F8\u95DC\u6587\u737B\uFF0C\u4EE5\u4E0B\u70BA\u81EA\u52D5\u6574\u7406\u7684\u6587\u737B\u6E05\u55AE\uFF08AI \u5206\u6790\u66AB\u6642\u7121\u6CD5\u4F7F\u7528\uFF09\u3002`,
-    top_picks: papers.slice(0, 5).map((p, i) => ({
-      rank: i + 1, title: p.title, journal: p.journal, pmid: p.pmid,
-      pico: { population: '-', intervention: '-', comparison: '-', outcome: '-' },
-      clinical_utility: '\u4E2D', summary_zh: '\uFF08\u5F85\u5206\u6790\uFF09', tags: [],
-    })),
-    other_papers: papers.slice(5).map(p => ({
-      title: p.title, journal: p.journal, pmid: p.pmid,
-      summary_zh: '\uFF08\u5F85\u5206\u6790\uFF09', tags: [],
-    })),
-    topic_distribution: {}, keywords: [],
-  };
+  console.error('[ERROR] All models and attempts failed');
+  return null;
 }
 
 function generateHTML(analysis, date, papersData) {
   const total = (analysis.top_picks?.length || 0) + (analysis.other_papers?.length || 0);
+  const modelUsed = analysis?._model || 'nvidia/nemotron-3-super-120b-a12b';
   const WEEKDAYS = ['\u9031\u65E5', '\u9031\u4E00', '\u9031\u4E8C', '\u9031\u4E09', '\u9031\u56DB', '\u9031\u4E94', '\u9031\u516D'];
   const d = new Date(date);
   const dateDisplay = `${d.getFullYear()}\u5E74${d.getMonth() + 1}\u6708${d.getDate()}\u65E5\uFF08${WEEKDAYS[d.getDay()]}\uFF09`;
@@ -267,7 +296,7 @@ footer a:hover{color:var(--accent)}
 ${renderHeader(dateDisplay, total)}
 ${analysis ? renderContent(analysis, papersData) : renderEmpty(date)}
 ${renderClinic()}
-${renderFooter(date)}
+${renderFooter(date, modelUsed)}
 </div>
 </body>
 </html>`;
@@ -358,10 +387,10 @@ ${renderFooter(date)}
 </div>`;
   }
 
-  function renderFooter(date) {
+  function renderFooter(date, modelUsed) {
     return `<footer>
-  <p>Powered by PubMed + Zhipu AI \xB7 <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
-  <p style="margin-top:4px">\u6578\u64DA\u4F86\u6E90\uFF1APubMed E-Utilities \xB7 AI \u5206\u6790\uFF1AGLM-5-Turbo</p>
+  <p>Powered by PubMed + NVIDIA Nemotron \xB7 <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+  <p style="margin-top:4px">\u6578\u64DA\u4F86\u6E90\uFF1APubMed E-Utilities \xB7 AI \u5206\u6790\uFF1A${modelUsed}</p>
 </footer>`;
   }
 }
@@ -393,9 +422,9 @@ async function main() {
     process.exit(1);
   }
   const date = values.date || new Date().toLocaleDateString('sv-SE', { timeZone: 'Asia/Taipei' });
-  const apiKey = process.env.ZHIPU_API_KEY;
+  const apiKey = process.env.NVIDIA_API_KEY;
   if (!apiKey) {
-    console.error('[FATAL] ZHIPU_API_KEY env var not set');
+    console.error('[FATAL] NVIDIA_API_KEY env var not set');
     process.exit(1);
   }
 
@@ -410,6 +439,10 @@ async function main() {
   console.log(`[INFO] Processing ${papersData.count} papers for ${date}`);
 
   const analysis = papersData.count > 0 ? await analyzeWithAI(apiKey, papersData) : null;
+  if (papersData.count > 0 && !analysis) {
+    console.error('[FATAL] Analysis failed, cannot generate report');
+    process.exit(1);
+  }
 
   const html = generateHTML(analysis, date, papersData);
   writeFileSync(values.output, html, 'utf8');
