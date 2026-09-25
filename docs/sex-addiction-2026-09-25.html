@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>性成癎研究文獻日報 · 2026-09-25</title>
+<style>
+:root{--bg:#f6f1e8;--surface:#fffaf2;--line:#d8c5ab;--text:#2b2118;--muted:#766453;--accent:#8c4f2b;--accent-soft:#ead2bf;--card-bg:color-mix(in srgb,var(--surface) 92%,white)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top,#fff6ea 0,var(--bg) 55%,#ead8c6 100%);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;min-height:100vh;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.header{text-align:center;padding:48px 0 32px;animation:fadeDown .6s ease}
+.logo{font-size:56px;margin-bottom:12px}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--accent);font-size:14px;margin-bottom:20px;font-weight:500}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.badge.date-badge{background:var(--accent-soft);color:var(--accent)}
+.badge.count-badge{background:#e2ddd4;color:var(--muted)}
+.card{background:var(--card-bg);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:20px;animation:fadeUp .6s ease both}
+.card h2{font-size:20px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.summary-text{font-size:15px;line-height:1.9;color:var(--text)}
+.section-title{font-size:22px;font-weight:700;margin:36px 0 20px;padding-left:4px;display:flex;align-items:center;gap:10px}
+.pick-card{background:var(--card-bg);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:18px;animation:fadeUp .5s ease both}
+.pick-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.rank{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+.pick-title{font-size:17px;font-weight:600;flex:1;min-width:0}
+.pick-journal{font-size:13px;color:var(--muted)}
+.util-badge{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
+.pico-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:14px 0}
+.pico-item{font-size:13px;line-height:1.5}
+.pico-label{color:var(--accent);font-weight:700;margin-right:4px}
+.pick-summary{font-size:14px;line-height:1.8;margin:12px 0;color:var(--text)}
+.pick-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{padding:3px 10px;border-radius:10px;font-size:11px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.paper-card{background:var(--card-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .5s ease both}
+.paper-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.paper-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.paper-summary{font-size:13px;line-height:1.7;color:var(--text)}
+.topic-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:14px}
+.topic-label{width:120px;text-align:right;flex-shrink:0;color:var(--text);font-weight:500}
+.topic-bar-wrap{flex:1;height:22px;background:var(--accent-soft);border-radius:6px;overflow:hidden}
+.topic-bar{height:100%;background:var(--accent);border-radius:6px;transition:width .5s ease;min-width:2px}
+.topic-count{font-size:12px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.kw{padding:5px 14px;background:var(--accent-soft);color:var(--accent);border-radius:14px;font-size:13px;font-weight:500}
+.clinic-banner{margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:center;font-size:14px;line-height:2.2}
+.clinic-banner a{color:var(--accent);text-decoration:none;font-weight:600}
+.clinic-banner a:hover{text-decoration:underline}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:40px;line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:15px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+  .wrap{padding:16px 12px 40px}
+  .pico-grid{grid-template-columns:1fr}
+  .topic-label{width:80px;font-size:12px}
+  .pick-card,.card{padding:18px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+  <div class="logo">🔬</div>
+  <h1>Sex Addiction Research</h1>
+  <p class="subtitle">性成癎研究文獻日報</p>
+  <div class="badges">
+    <span class="badge date-badge">📅 2026年9月25日（週五）</span>
+    <span class="badge count-badge">📄 2 篇文獻</span>
+  </div>
+</header>
+<section class="card"><h2>📊 今日文獻趨勢</h2><p class="summary-text">今日文獻聚焦於強迫性性行為障礙的兩個核心構面：性慾望（sexual craving）與情緒調節功能。兩項研究均採用心理測量與神經科學方法，一篇驗證渴望量表的短版表心理特性，另一篇探索自我報告與神經測量在情緒調節上的脫節現象。結果提示，性慾望可作為 dysregulation 的關鍵心理過程，而情緒調節的主客觀差異凸顯了該障礙的複雜神經認知機制。雖樣本大小與文化普遍性尚待驗證，但均具有重要臨床與研究意涵，有助於深化診斷框架與治療靶點。</p></section><h2 class="section-title">⭐ 本日精選</h2><div class="pick-card" style="animation-delay:0s">
+  <div class="pick-header">
+    <span class="rank">1</span>
+    <span class="pick-title">Sexual craving as a core process in dysregulated sexual behaviors: Psychometric validation of the Short Scale of Sexual Craving (3SC).</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">L'Encephale</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42786053/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>具有失調性行為之成人個體</div>
+    <div class="pico-item"><span class="pico-label">I</span>使用 Short Scale of Sexual Craving (3SC) 量表評估</div>
+    <div class="pico-item"><span class="pico-label">C</span>未使用量表者或一般對照組（未明確記載）</div>
+    <div class="pico-item"><span class="pico-label">O</span>3SC 量表表現出良好信度效度，可作為性慾望測量工具</div>
+  </div>
+  <p class="pick-summary">此研究旨在驗證 Short Scale of Sexual Craving (3SC) 作為測量性慾望的簡短工具之心理特性。性慾望被 hypothesised 為 dysregulation 性行為的核心過程，因此開發簡易、可靠之量表具重要臨床價值。研究結果顯示 3SC 具有良好內部一致性與結構效度，支持其在評估強迫性性行為障礙（CSBD）或相關失調性行為時的應用潛力。儘管樣本來源與文化適切性尚需進一步探討，此工具可補充現有評估方法，協助臨床師更精準捕捉性慾望動態，並作為治療反應之生物心理指標。</p>
+  <div class="pick-tags"><span class="tag">量表評估</span><span class="tag">CSBD診斷分類</span><span class="tag">衝動強迫機制</span></div>
+</div><div class="pick-card" style="animation-delay:0.08s">
+  <div class="pick-header">
+    <span class="rank">2</span>
+    <span class="pick-title">Emotion regulation in compulsive sexual behavior disorder: Divergence between self-report and neural measures.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Acta psychologica</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42784899/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>被診斷為強迫性性行為障礙（CSBD）之成人</div>
+    <div class="pico-item"><span class="pico-label">I</span>自我報告情緒調節能力 + 神經影像（如 fMRI）測量情緒處理</div>
+    <div class="pico-item"><span class="pico-label">C</span>健康對照組或低症狀組（隱含）</div>
+    <div class="pico-item"><span class="pico-label">O</span>自我報告顯示情緒調節困難，但神經測量未見明顯異常，存在主客觀脫節</div>
+  </div>
+  <p class="pick-summary">此研究探討強迫性性行為障礙（CSBD）個體在情緒調節方面的主客觀差異。參與者在自報量表中顯著自我評為情緒調節能力較弱，然而在執行情緒調節任務時的神經活動（特別是前額葉與邊緣系統連接）與對照組並無顯著差異。此一主客觀脫節（divergence）提示，CSBD 病患可能對自身情緒能力有負性偏見，或其痛苦來源不單純來自神經功能失調，而是涉及認知評估、羞慕或罪惡感等心理層面。結果強調在評估與治療時需整合主觀體驗與客觀測量，避免過度依賴單一資訊來源。</p>
+  <div class="pick-tags"><span class="tag">情緒調節</span><span class="tag">神經影像</span><span class="tag">羞慕罪惡感</span><span class="tag">心理治療</span></div>
+</div><section class="card"><h2>📈 主題分佈</h2><div class="topic-row">
+  <span class="topic-label">量表評估</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">CSBD診斷分類</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">衝動強迫機制</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">情緒調節</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">神經影像</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">羞慕罪惡感</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">心理治療</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">1</span>
+</div></section><section class="card"><h2>🏷️ 關鍵字</h2><div class="kw-wrap"><span class="kw">性慾望</span><span class="kw">情緒調節</span><span class="kw">強迫性性行為障礙</span><span class="kw">3SC 量表</span><span class="kw">主客觀脫節</span><span class="kw">神經科學</span><span class="kw">心理測量</span><span class="kw">羞慕罪惡感</span><span class="kw">衝動控制</span><span class="kw">臨床評估</span></div></section>
+<div class="clinic-banner">
+  <p>🏠 <a href="https://www.leepsyclinic.com/">李政洋身心診所首頁</a></p>
+  <p>📨 <a href="https://blog.leepsyclinic.com/">訂閱電子報</a></p>
+  <p>☕ <a href="https://buymeacoffee.com/CYlee">Buy me a coffee</a></p>
+</div>
+<footer>
+  <p>Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+  <p style="margin-top:4px">數據來源：PubMed E-Utilities · AI 分析：nvidia/nemotron-3-super-120b-a12b</p>
+</footer>
+</div>
+</body>
+</html>
