@@ -4,7 +4,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 
 const API_BASE = (process.env.NVIDIA_API_BASE || 'https://integrate.api.nvidia.com/v1').replace(/\/+$/, '');
-const MODEL_CHAIN = ['nvidia/nemotron-3-super-120b-a12b', 'nvidia/nemotron-3-nano-30b-a3b'];
+const MODEL_CHAIN = ["nvidia/nemotron-3-ultra-550b-a55b"];
 const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 480000;
 const MAX_RETRIES = 3;
@@ -218,7 +218,7 @@ ${paperList}
 
 function generateHTML(analysis, date, papersData) {
   const total = (analysis.top_picks?.length || 0) + (analysis.other_papers?.length || 0);
-  const modelUsed = analysis?._model || 'nvidia/nemotron-3-super-120b-a12b';
+  const modelUsed = analysis?._model || 'nvidia/nemotron-3-ultra-550b-a55b';
   const WEEKDAYS = ['\u9031\u65E5', '\u9031\u4E00', '\u9031\u4E8C', '\u9031\u4E09', '\u9031\u56DB', '\u9031\u4E94', '\u9031\u516D'];
   const d = new Date(date);
   const dateDisplay = `${d.getFullYear()}\u5E74${d.getMonth() + 1}\u6708${d.getDate()}\u65E5\uFF08${WEEKDAYS[d.getDay()]}\uFF09`;
