@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>性成癎研究文獻日報 · 2026-11-06</title>
+<style>
+:root{--bg:#f6f1e8;--surface:#fffaf2;--line:#d8c5ab;--text:#2b2118;--muted:#766453;--accent:#8c4f2b;--accent-soft:#ead2bf;--card-bg:color-mix(in srgb,var(--surface) 92%,white)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top,#fff6ea 0,var(--bg) 55%,#ead8c6 100%);color:var(--text);font-family:"Noto Sans TC","PingFang TC","Helvetica Neue",Arial,sans-serif;min-height:100vh;line-height:1.7}
+.wrap{max-width:880px;margin:0 auto;padding:32px 20px 64px}
+.header{text-align:center;padding:48px 0 32px;animation:fadeDown .6s ease}
+.logo{font-size:56px;margin-bottom:12px}
+h1{font-size:28px;font-weight:700;margin-bottom:4px}
+.subtitle{color:var(--accent);font-size:14px;margin-bottom:20px;font-weight:500}
+.badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:13px;font-weight:600}
+.badge.date-badge{background:var(--accent-soft);color:var(--accent)}
+.badge.count-badge{background:#e2ddd4;color:var(--muted)}
+.card{background:var(--card-bg);border:1px solid var(--line);border-radius:24px;padding:28px;margin-bottom:20px;animation:fadeUp .6s ease both}
+.card h2{font-size:20px;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.summary-text{font-size:15px;line-height:1.9;color:var(--text)}
+.section-title{font-size:22px;font-weight:700;margin:36px 0 20px;padding-left:4px;display:flex;align-items:center;gap:10px}
+.pick-card{background:var(--card-bg);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:16px;padding:24px;margin-bottom:18px;animation:fadeUp .5s ease both}
+.pick-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.rank{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0}
+.pick-title{font-size:17px;font-weight:600;flex:1;min-width:0}
+.pick-journal{font-size:13px;color:var(--muted)}
+.util-badge{padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
+.pico-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;margin:14px 0}
+.pico-item{font-size:13px;line-height:1.5}
+.pico-label{color:var(--accent);font-weight:700;margin-right:4px}
+.pick-summary{font-size:14px;line-height:1.8;margin:12px 0;color:var(--text)}
+.pick-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.tag{padding:3px 10px;border-radius:10px;font-size:11px;background:var(--accent-soft);color:var(--accent);font-weight:500}
+.paper-card{background:var(--card-bg);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;animation:fadeUp .5s ease both}
+.paper-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.paper-meta{font-size:12px;color:var(--muted);margin-bottom:8px}
+.paper-summary{font-size:13px;line-height:1.7;color:var(--text)}
+.topic-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:14px}
+.topic-label{width:120px;text-align:right;flex-shrink:0;color:var(--text);font-weight:500}
+.topic-bar-wrap{flex:1;height:22px;background:var(--accent-soft);border-radius:6px;overflow:hidden}
+.topic-bar{height:100%;background:var(--accent);border-radius:6px;transition:width .5s ease;min-width:2px}
+.topic-count{font-size:12px;color:var(--muted);width:28px;text-align:right;flex-shrink:0}
+.kw-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.kw{padding:5px 14px;background:var(--accent-soft);color:var(--accent);border-radius:14px;font-size:13px;font-weight:500}
+.clinic-banner{margin-top:40px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:center;font-size:14px;line-height:2.2}
+.clinic-banner a{color:var(--accent);text-decoration:none;font-weight:600}
+.clinic-banner a:hover{text-decoration:underline}
+footer{text-align:center;font-size:12px;color:var(--muted);margin-top:40px;line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--accent)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted);font-size:15px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:600px){
+  .wrap{padding:16px 12px 40px}
+  .pico-grid{grid-template-columns:1fr}
+  .topic-label{width:80px;font-size:12px}
+  .pick-card,.card{padding:18px;border-radius:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="header">
+  <div class="logo">🔬</div>
+  <h1>Sex Addiction Research</h1>
+  <p class="subtitle">性成癎研究文獻日報</p>
+  <div class="badges">
+    <span class="badge date-badge">📅 2026年11月6日（週五）</span>
+    <span class="badge count-badge">📄 5 篇文獻</span>
+  </div>
+</header>
+<section class="card"><h2>📊 今日文獻趨勢</h2><p class="summary-text">今日文獻呈現三大趨勢：1) 概念區辨研究進展，採用網絡分析證實 CSBD 與 PPU 為獨立建構；2) 道德不一致的多層次縱向研究，揭示特質層面道德反對與狀態層面使用頻率的交互作用機制；3) 神經影像與臨床相關研究擴展至女性族群與 PrEP 自我效能預測因子。研究方法上強調跨文化樣本（澳紐、奈及利亞、美國）與多層次建模，臨床意涵指向診斷精準化與文化回應式介入。</p></section><h2 class="section-title">⭐ 本日精選</h2><div class="pick-card" style="animation-delay:0s">
+  <div class="pick-header">
+    <span class="rank">1</span>
+    <span class="pick-title">Compulsive Sexual Behaviour vs Problematic Pornography Use: Converging Evidence of Distinct Constructs from GGM, EGA and Bayesian Networks.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of sex research</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42987175/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>澳紐社區成人樣本（N=632，58.5%女性）</div>
+    <div class="pico-item"><span class="pico-label">I</span>CSBD-19 與 PPCS 量表測評</div>
+    <div class="pico-item"><span class="pico-label">C</span>網絡分析比較 CSBD 與 PPU 症狀結構</div>
+    <div class="pico-item"><span class="pico-label">O</span>兩構念呈現經驗上可分離的網絡，跨構念連結極微弱</div>
+  </div>
+  <p class="pick-summary">此多方法研究運用高斯圖模型、探索性圖分析與貝氏網絡，證實 CSBD 與 PPU 為獨立症狀叢集。CSBD 核心特徵為性滿足度降低，PPU 則以情緒調節與顯著性症狀為中心。研究警示臨床不應以 PPU 直接作為 CSBD 替代指標，對 ICD-11 診斷區辨具重要參考價值。</p>
+  <div class="pick-tags"><span class="tag">CSBD診斷分類</span><span class="tag">PPU色情內容</span><span class="tag">量表評估</span></div>
+</div><div class="pick-card" style="animation-delay:0.08s">
+  <div class="pick-header">
+    <span class="rank">2</span>
+    <span class="pick-title">The dual-level dynamics of moral incongruence: A multilevel analysis of problematic pornography use.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of psychopathology and clinical science</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42986328/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>美國社區成人縱向樣本（N=2,903，5波/2年）</div>
+    <div class="pico-item"><span class="pico-label">I</span>道德反對態度、色情使用頻率、PPU 縱向追蹤</div>
+    <div class="pico-item"><span class="pico-label">C</span>多層次模型區辨個體間與個體內效應</div>
+    <div class="pico-item"><span class="pico-label">O</span>特質道德反對與狀態使用頻率交互作用預測 PPU，個體內純效應不顯著</div>
+  </div>
+  <p class="pick-summary">大型縱向研究揭示道德不一致的雙層動態：道德反對在群體層面抑制使用頻率，卻在個體層面成為 PPU 風險因子。關鍵發現為跨層交互作用——高道德反對者在使用頻率相對增加時，PPU 顯著升高。強調臨床診斷必須區分道德衝突與真實行為失調，避免病理化正常性行為。</p>
+  <div class="pick-tags"><span class="tag">道德不一致</span><span class="tag">PPU色情內容</span><span class="tag">精神共病</span></div>
+</div><div class="pick-card" style="animation-delay:0.16s">
+  <div class="pick-header">
+    <span class="rank">3</span>
+    <span class="pick-title">What happens in the brains of sexually compulsive women? An fMRI study on compulsive sexual behavior disorder in women.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Journal of behavioral addictions</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42986355/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>女性 CSBD 患者與健康對照組</div>
+    <div class="pico-item"><span class="pico-label">I</span>功能性磁振造影（fMRI）掃描</div>
+    <div class="pico-item"><span class="pico-label">C</span>患者組 vs 對照組神經迴路差異</div>
+    <div class="pico-item"><span class="pico-label">O</span>女性 CSBD 特有神經生物學標記（待全文確認具體發現）</div>
+  </div>
+  <p class="pick-summary">首項聚焦女性 CSBD 的 fMRI 研究，填補神經影像文獻以男性為主的缺口。探討女性強迫性性行為的神經迴路機制，可能涉及獎勵處理、衝動控制與情緒調節網絡的性別差異。為開發性別特異性治療目標奠定神經生物學基礎。</p>
+  <div class="pick-tags"><span class="tag">神經影像</span><span class="tag">神經生物學</span><span class="tag">CSBD診斷分類</span></div>
+</div><div class="pick-card" style="animation-delay:0.24s">
+  <div class="pick-header">
+    <span class="rank">4</span>
+    <span class="pick-title">Peer Normative Structuring of Sexualized Substance Use Among Youths in Niger State, Nigeria: A Mixed Methods Sociological Analysis.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">Substance use &amp; misuse</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42986983/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#9f7a2e">臨床價值：中</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>奈及利亞奈傑爾州青年（N=1,043 量化 + 15 質性）</div>
+    <div class="pico-item"><span class="pico-label">I</span>同儕規範氣候、文化宗教脈絡、性化物質使用</div>
+    <div class="pico-item"><span class="pico-label">C</span>多階層分層抽樣、混合方法三角驗證</div>
+    <div class="pico-item"><span class="pico-label">O</span>同儕鼓勵為 SSU 最強預測因子（Cramér's V=0.76），人口學變項效應不顯著</div>
+  </div>
+  <p class="pick-summary">撒哈拉以南非洲首項探討青年性化物質使用（SSU）社會機制的混合方法研究。發現同儕規範環境（而非個體病理或性信念）主導 SSU 行為，且 SSU 頻率與四類性風險行為（多伴侶、安全套使用、強迫性性行為、非常規實踐）無顯著關聯。強調預防介入需著眼同儕規範重塑與文化脈絡嵌入。</p>
+  <div class="pick-tags"><span class="tag">青少年</span><span class="tag">物質使用</span><span class="tag">社會文化批判</span><span class="tag">HIV/STI風險</span></div>
+</div><div class="pick-card" style="animation-delay:0.32s">
+  <div class="pick-header">
+    <span class="rank">5</span>
+    <span class="pick-title">Factors Associated with Pre Exposure Prophylaxis Self-Efficacy Among Men Who Have Sex With Men in the United States.</span>
+  </div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap">
+    <span class="pick-journal">AIDS and behavior</span>
+    <a href="https://pubmed.ncbi.nlm.nih.gov/42983148/" target="_blank" style="font-size:12px;color:var(--accent)">PubMed ↗</a>
+    <span class="util-badge" style="background:#5a7a3a">臨床價值：高</span>
+  </div>
+  <div class="pico-grid">
+    <div class="pico-item"><span class="pico-label">P</span>美國 MSM（N=300，具心理社會綜合徵狀，啟動 PrEP 或預期依從困難）</div>
+    <div class="pico-item"><span class="pico-label">I</span>PrEP 自我效能三領域評估（常規依從、藥物管理、心理社會挑戰）</div>
+    <div class="pico-item"><span class="pico-label">C</span>貝氏變數選擇與多元線性迴歸識別預測因子</div>
+    <div class="pico-item"><span class="pico-label">O</span>年齡較大、結構障礙較少、社交焦慮較低、無多重物質使用史、本土出生、性強迫性較低預測較高 SE</div>
+  </div>
+  <p class="pick-summary">針對高風險 MSM 的 PrEP 自我效能預測因子研究。性強迫性（b=-0.157）與海外出生身分（b=-0.932）顯著預測克服心理社會挑戰自我效能較低；結構性障礙跨三領域均為負向預測因子。提示 PrEP 介入需整合性行為失調篩查、結構性障礙消除與文化回應式設計，提升藥物依從與 HIV 預防成效。</p>
+  <div class="pick-tags"><span class="tag">HIV/STI風險</span><span class="tag">精神共病</span><span class="tag">物質使用</span><span class="tag">性別文化</span></div>
+</div><section class="card"><h2>📈 主題分佈</h2><div class="topic-row">
+  <span class="topic-label">CSBD診斷分類</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">PPU色情內容</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">物質使用</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">HIV/STI風險</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">精神共病</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:100%"></div></div>
+  <span class="topic-count">2</span>
+</div><div class="topic-row">
+  <span class="topic-label">道德不一致</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">神經影像</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">神經生物學</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">青少年</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">社會文化批判</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">量表評估</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div><div class="topic-row">
+  <span class="topic-label">性別文化</span>
+  <div class="topic-bar-wrap"><div class="topic-bar" style="width:50%"></div></div>
+  <span class="topic-count">1</span>
+</div></section><section class="card"><h2>🏷️ 關鍵字</h2><div class="kw-wrap"><span class="kw">CSBD</span><span class="kw">PPU</span><span class="kw">道德不一致</span><span class="kw">神經影像</span><span class="kw">女性</span><span class="kw">同儕規範</span><span class="kw">性化物質使用</span><span class="kw">PrEP</span><span class="kw">自我效能</span><span class="kw">MSM</span><span class="kw">網絡分析</span><span class="kw">多層次模型</span><span class="kw">縱向研究</span><span class="kw">跨文化</span><span class="kw">診斷區辨</span><span class="kw">性別差異</span><span class="kw">結構性障礙</span><span class="kw">依從性</span><span class="kw">強迫性性行為</span><span class="kw">色情使用</span></div></section>
+<div class="clinic-banner">
+  <p>🏠 <a href="https://www.leepsyclinic.com/">李政洋身心診所首頁</a></p>
+  <p>📨 <a href="https://blog.leepsyclinic.com/">訂閱電子報</a></p>
+  <p>☕ <a href="https://buymeacoffee.com/CYlee">Buy me a coffee</a></p>
+</div>
+<footer>
+  <p>Powered by PubMed + NVIDIA Nemotron · <a href="https://github.com/u8901006/sex-addiction">GitHub</a></p>
+  <p style="margin-top:4px">數據來源：PubMed E-Utilities · AI 分析：nvidia/nemotron-3-ultra-550b-a55b</p>
+</footer>
+</div>
+</body>
+</html>
